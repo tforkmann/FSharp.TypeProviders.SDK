@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\..\netfx.props" />
   <PropertyGroup>
-     <TargetFrameworks>netcoreapp2.0;net461</TargetFrameworks>
+     <TargetFrameworks>netcoreapp3.0</TargetFrameworks>
      <IsPackable>false</IsPackable>
      <DefineConstants>NO_GENERATIVE</DefineConstants>
   </PropertyGroup>
@@ -10,7 +10,7 @@
       <Link>ProvidedTypesTesting.fs</Link>
     </Compile>
     <Compile Include="BasicProvider.Tests.fs" />
-    <Compile Include="Program.fs" Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netcoreapp2.0' " />
+    <Compile Include="Program.fs" />
 
     <None Include="xunit.runner.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

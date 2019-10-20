@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\netfx.props" />
   <PropertyGroup>
-     <TargetFrameworks>netcoreapp2.0;net461</TargetFrameworks>
+     <TargetFrameworks>netcoreapp3.0</TargetFrameworks>
      <IsPackable>false</IsPackable>
     <DefineConstants>$(DefineConstants);INTERNAL_FSHARP_TYPEPROVIDERS_SDK_TESTS</DefineConstants>
   </PropertyGroup>
@@ -27,5 +27,6 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0-preview-20170517-02" />
     <PackageReference Include="xunit" Version="2.2.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+    <PackageReference Include="System.Reflection.Emit" Version="4.6.0" />
   </ItemGroup>
 </Project>

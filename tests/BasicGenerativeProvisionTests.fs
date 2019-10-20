@@ -373,9 +373,8 @@ let ``GenerativeProviderWithRecursiveReferencesToGeneratedTypes generates for ho
             File.Delete(tmpFile)
             let simpleName = Path.GetFileNameWithoutExtension(assemblyFileName)
             let asmName = AssemblyName(simpleName)
-            let currentDom  = AppDomain.CurrentDomain
-            let asmB = currentDom.DefineDynamicAssembly(asmName, AssemblyBuilderAccess.RunAndSave, ".")
-            let modB = asmB.DefineDynamicModule(simpleName,  Path.GetFileName assemblyFileName)
+            let asmB = AssemblyBuilder.DefineDynamicAssembly(asmName, AssemblyBuilderAccess.Run) // might needs to be fixed
+            let modB = asmB.DefineDynamicModule(assemblyFileName) // might needs to be fixed
             let typB = modB.DefineType("A", TypeAttributes.Sealed ||| TypeAttributes.Class)
             let methB = typB.DefineMethod("M", MethodAttributes.Static)
         
